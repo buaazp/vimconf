@@ -1,0 +1,7 @@
+DoxygenToolkit.vim
+NERD_tree.vim
+a.vim
+minibufexpl.vim
+supertab.vim
+taglist.vim
+word_complete.vim
