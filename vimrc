@@ -64,7 +64,7 @@ set viminfo='200,f1,<1500 " read/write a .viminfo file, don't store more
 set history=1500 " keep 50 lines of command line history
 set ruler " show the cursor position all the time
 " 我的状态行显示的内容（包括文件类型和解码） 
-set statusline=%f%m%r%h%w\ [enc=%{&enc}]\ [fenc=%{&fenc}]\ [format=%{&ff}]\ [type=%y]\ [pos=%l/%l行,%v列][%p%%]\ %{strftime(\"%m/%d/%y\ -\ %h:%m\")}
+set statusline=%f%m%r%h%w\ [enc=%{&enc}]\ [fenc=%{&fenc}]\ [format=%{&ff}]\ [type=%y]\ [pos=%l/%l行,%v列][%p%%]\ %{strftime(\"%m/%d/%y\ -\ %H:%M:%S\")}
 set laststatus=2
 "设置状态行颜色
 "highlight StatusLine guifg=SlateBlue guibg=Yellow
