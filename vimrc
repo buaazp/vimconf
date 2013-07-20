@@ -180,7 +180,7 @@ set pastetoggle=<F11>
 "输入:set nopaste
 "我是在vimrc中加入了：
 "set pastetoggle=<F11>
-"这样就可以用F3来切换了。
+"这样就可以用F11来切换了。
 if (has("win32"))
  
      "-------------------------------------------------------------------------
@@ -265,16 +265,23 @@ let Tlist_Exist_OnlyWindow=1 " If you are the last, kill yourself
 
 "doxygen setting
 let g:DoxygenToolkit_authorName="招牌疯子 zp@buaa.us"
-let s:licenseTag = "Copyright(C)\<enter>"
-let s:licenseTag = s:licenseTag . "For free\<enter>"
-let s:licenseTag = s:licenseTag . "All right reserved\<enter>"
+let s:licenseTag = "  \<enter>"
+let s:licenseTag = s:licenseTag . "  zimg - high performance image storage and processing system.\<enter>"
+let s:licenseTag = s:licenseTag . "      http://zimg.buaa.us \<enter>"
+let s:licenseTag = s:licenseTag . "  \<enter>"
+let s:licenseTag = s:licenseTag . "  Copyright (c) 2013, Peter Zhao <zp@buaa.us>.\<enter>"
+let s:licenseTag = s:licenseTag . "  All rights reserved.\<enter>"
+let s:licenseTag = s:licenseTag . "  \<enter>"
+let s:licenseTag = s:licenseTag . "  Use and distribution licensed under the BSD license.\<enter>"
+let s:licenseTag = s:licenseTag . "  See the LICENSE file for full text.\<enter>"
 let g:DoxygenToolkit_licenseTag = s:licenseTag
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:doxygen_enhanced_color=1
 "DoxAuthor Dox DoxBlock三个命令的快捷操作
-"    map <F3>a : DoxAuthor
-"    map <F3>f : Dox
-"    map <F3>b : DoxBlock
+nnoremap <silent><F3>a : DoxAuthor<CR>
+nnoremap <silent><F3>f : Dox<CR>
+nnoremap <silent><F3>b : DoxBlock<CR>
+nnoremap <silent><F3>l : DoxLic<CR>
 
 "设置a.vim插件的快捷键
 nnoremap <silent> <F9> :A<CR>
