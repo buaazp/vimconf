@@ -1,3 +1,22 @@
+set shell=/bin/sh
+
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+Bundle 'Blackrush/vim-gocode'
+
+"golang
+autocmd BufWritePre *.go :Fmt
+filetype plugin on
+au BufRead,BufNewFile *.go set filetype=go
+imap <C-p> <C-x><C-o>
+
 "vimim 相关
 let g:vimim_enable_static_enu=2
 "let g:vimim_enable_sexy_input_style=2
@@ -15,7 +34,7 @@ set complete-=k complete+=k
 set completeopt=longest,menu
 
 "与系统剪贴板共享
-set clipboard+=unnamed
+"set clipboard+=unnamed
  
 imap <C-L> <C-x><C-o>
 set nu
@@ -249,19 +268,46 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 set viminfo='1000,f1,<500
 
 "设置taglist快捷键
-map <silent><F4> :Tlist<CR>
+"map <silent><F4> :Tlist<CR>
+map <silent><F4> :TlistToggle<CR> 
 "TList的列表位于右侧
-"let Tlist_Use_Right_Window=1
+let Tlist_Use_Right_Window=1
 "当前不被编辑的文件的方法列表自动折叠起来
-let Tlist_File_Fold_Auto_Close=1
+"let Tlist_File_Fold_Auto_Close=1
 "更改ctags路径
-set tags=.tags;
+set tags=tags
 set autochdir
 "taglist自动更新
 let Tlist_Auto_Update = 1
-let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+"let Tlist_Ctags_Cmd = '/usr/bin/ctags'
 let Tlist_Show_One_File=1 " Only show the tag list of current file
-let Tlist_Exist_OnlyWindow=1 " If you are the last, kill yourself
+let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim
+
+
+"NerdTree setting
+" 开关文件浏览器
+map <silent><F2> :NERDTreeToggle <CR>
+" 在文件浏览器中定位当前文件
+map <silent><F5> :NERDTreeFind <CR>
+" 关闭文件时同时关闭文件浏览器
+let NERDTreeQuitOnOpen = 1
+
+"minibuffer setting
+let g:miniBufExplSplitBelow = 0
+let g:miniBufExplForceSyntaxEnable = 0
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMaxSize = 0
+let g:miniBufExplModSelTarget = 1
+let g:miniBufExplTabWrap = 1
+let g:miniBufExplUseSingleClick = 1
+let g:miniBufExplCheckDupeBufs = 0
+
+" 打开文件定位窗口
+nnoremap <slient> <D-R> :CommandT<CR>
+" 打开最近打开的文件列表
+nnoremap <slient> <D-E> :CommandTBuffer<CR>
 
 "doxygen setting
 let g:DoxygenToolkit_authorName="招牌疯子 zp@buaa.us"
@@ -269,7 +315,7 @@ let s:licenseTag = "  \<enter>"
 let s:licenseTag = s:licenseTag . "  zimg - high performance image storage and processing system.\<enter>"
 let s:licenseTag = s:licenseTag . "      http://zimg.buaa.us \<enter>"
 let s:licenseTag = s:licenseTag . "  \<enter>"
-let s:licenseTag = s:licenseTag . "  Copyright (c) 2013, Peter Zhao <zp@buaa.us>.\<enter>"
+let s:licenseTag = s:licenseTag . "  Copyright (c) 2013-2014, Peter Zhao <zp@buaa.us>.\<enter>"
 let s:licenseTag = s:licenseTag . "  All rights reserved.\<enter>"
 let s:licenseTag = s:licenseTag . "  \<enter>"
 let s:licenseTag = s:licenseTag . "  Use and distribution licensed under the BSD license.\<enter>"
