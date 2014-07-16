@@ -1,6 +1,50 @@
-vim插件和配置(MAC版)
-==========================================
-@招牌疯子 自用的Vim插件列表和配置文件，适用于C/C++开发者。 <br />
-此配置为MAC OS X版本，功能相对较少但使用起来很顺手。 <br />
-大量注释应该足以使你明白相关的功能，若还有疑问可以邮箱联系：zp@buaa.us。 <br />
+## Vimconf
+
+[@招牌疯子](http://weibo.com/buaazp) 
+
+### 概述
+
+我自己使用的Vim插件和配置文件，适用于C/C++开发者。
+
+此配置在MAC OS X、Ubuntu、CentOS上都兼容，用起来很顺手。附上一张截图：
+
+![screenshot](http://ww4.sinaimg.cn/large/4c422e03jw1eieng4wr6qj212q0oojx7.jpg)
+
+在配置中写了大量注释应该足以使你明白相关的功能，若还有疑问可以邮箱联系：
+
+zp@buaa.us
+
+### 使用
+
+```
+git clone https://github.com/buaazp/vimconf
+cd vimconf
+cp vimrc ~/.vimrc
+mkdir -p ~/.vim
+cp -r plugin ~/.vim
+```
+
+### 配件
+
+多年Mac和Linux的使用沉淀下来了一套自己的习惯，每当登录一台新的服务器时都要先安装配置一遍，但是这些并非每个人都喜欢或者都用的顺手，纯属个人喜好了。
+
+#### shell - fish [Download](http://fishshell.com/)
+
+> 我觉得最好用的自动补全功能，比起zsh都要快一万倍  
+> 对于新手来说一个重要的变化是，设置环境变量不再是export PATH=XXX这种方式，而是直接赋值：set PATH /sbin /usr/local/bin $PATH
+
+#### multiplexer - tmux [Download](http://tmux.sourceforge.net/)
+
+> 从screen转换过来的，第一次用就喜欢上了  
+> 比起screen最大的优点是可以在配置文件里自定义很多功能  
+> 分屏功能简直逆天！
+
+我把自己的tmux配置文件也放在此包内，需要使用的执行以下命令即可：
+
+```
+cd vimconf
+cp tmux.conf ~/.tmux.conf
+```
+
+
 
