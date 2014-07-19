@@ -256,6 +256,8 @@ set viminfo='1000,f1,<500
 "设置taglist快捷键
 "map <silent><F4> :Tlist<CR>
 map <silent><F4> :TlistToggle<CR> 
+"TList不自动打开
+let Tlist_Auto_Open=0
 "TList的列表位于右侧
 let Tlist_Use_Right_Window=1
 "当前不被编辑的文件的方法列表自动折叠起来
