@@ -1,6 +1,7 @@
 DoxygenToolkit.vim
 NERD_tree.vim
 a.vim
+auto-pairs.vim
 minibufexpl.vim
 supertab.vim
 taglist.vim
