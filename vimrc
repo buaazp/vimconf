@@ -1,51 +1,3 @@
-"autoload settings
-call pathogen#infect()
-
-syntax enable
-filetype plugin on
-set number
-
-"color settings
-colorscheme molokai
-let g:rehash256=1
-
-"vim-go settings
-let g:go_disable_autoinstall=0
-
-"neocomplete settings
-let g:neocomplete#enable_at_startup=1
-
-"tagbar settings
-nmap <silent><F4> :TagbarToggle<CR>
-let g:tagbar_width=20
-let g:tagbar_type_go={  
-    \ 'ctagstype' : 'go',
-    \ 'kinds'     : [
-        \ 'p:package',
-        \ 'i:imports:1',
-        \ 'c:constants',
-        \ 'v:variables',
-        \ 't:types',
-        \ 'n:interfaces',
-        \ 'w:fields',
-        \ 'e:embedded',
-        \ 'm:methods',
-        \ 'r:constructor',
-        \ 'f:functions'
-    \ ],
-    \ 'sro' : '.',
-    \ 'kind2scope' : {
-        \ 't' : 'ctype',
-        \ 'n' : 'ntype'
-    \ },
-    \ 'scope2kind' : {
-        \ 'ctype' : 't',
-        \ 'ntype' : 'n'
-    \ },
-    \ 'ctagsbin'  : 'gotags',
-    \ 'ctagsargs' : '-sort -silent'
-\ }
-
 set shell=/bin/sh
 
 set nocompatible               " be iMproved
@@ -75,6 +27,7 @@ set nu
 autocmd FileType python set complete+=k~/.vim/tools/pydiction
  
 set nocp
+filetype plugin on
 set helplang=cn
 "map <F6> :Project<CR>
 
@@ -126,6 +79,7 @@ set laststatus=2
 set cmdheight=2
  
 if has("autocmd")
+    filetype plugin indent on
     autocmd FileType python set omnifunc=pythoncomplete#Complete
     autocmd FileType ruby set omnifunc=rubycomplete#Complete
     autocmd FileType c set omnifunc=ccomplete#Complete
@@ -151,6 +105,7 @@ set hls
 "搜索时高亮显示被找到的文本。 该指令的功能在 vimtutor 中已经有过介绍， 这里就不多说了。 其实似乎许多人并不喜欢这个功能。
 "set is
 "搜索时在未完全输入完毕要检索的文本时就开始检索。 vimtutor 对该命令也有过介绍， 滇狐并不喜欢这个功能， 因此滇狐自己的配置文件里是没有这条命令的。 但是周围有朋友很喜欢这个， 因此滇狐还是将它列在这里。
+syntax on
 set showmatch
 "打开关键字上色。 进行程序设计的朋友应该都知道关键字上色是什么东西， 因此这里就不多说了。 不进行程序设计的朋友不妨也打开这个功能， 虽然不一定能够用得着， 但这个功能其实也是很好玩的。
 set backspace=indent,eol,start
@@ -189,6 +144,8 @@ set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 "设置编码的自动识别。 关于这条设置的详细含义， 请参看这篇文章。
 "set ambiwidth=double
 "防止特殊符号无法正常显示。 在 Unicode 中， 许多来自不同语言的字符， 如果字型足够近似的话， 会把它们放在同一个编码中。但在不同编码中， 字符的宽度是不一样的。 例如中文汉语拼音中的 ā 就很宽， 而欧洲语言中同样的字符就很窄。 当 VIM 工作在 Unicode 状态时， 遇到这些宽度不明的字符时， 默认使用窄字符， 这会导致中文的破折号“——”非常短， 五角星“★”等符号只能显示一半。因此， 我们需要设置 ambiwidth=double 来解决这个问题。
+filetype plugin indent on
+"开启文件类型自动识别， 启用文件类型插件， 启用针对文件类型的自动缩进
 
 "set tw=78
 "设置光标超过 78 列的时候折行。
@@ -296,21 +253,23 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 "n 用于 viminfo 文件的名称 (必须为最后一项选项)
 set viminfo='1000,f1,<500
 
-""设置taglist快捷键
-"map <silent><F4> :TlistToggle<CR> 
-""TList的列表位于右侧
-"let Tlist_Use_Right_Window=1
-""当前不被编辑的文件的方法列表自动折叠起来
-""let Tlist_File_Fold_Auto_Close=1
-""taglist自动更新
-"let Tlist_Auto_Update=1
-""let Tlist_Ctags_Cmd='/usr/local/bin/ctags'
-"let Tlist_Show_One_File=1 " Only show the tag list of current file
-"let Tlist_Exit_OnlyWindow=1 "如果taglist窗口是最后一个窗口，则退出vim
-
+"设置taglist快捷键
+"map <silent><F4> :Tlist<CR>
+map <silent><F4> :TlistToggle<CR> 
+"TList不自动打开
+let Tlist_Auto_Open=0
+"TList的列表位于右侧
+let Tlist_Use_Right_Window=1
+"当前不被编辑的文件的方法列表自动折叠起来
+"let Tlist_File_Fold_Auto_Close=1
 "更改ctags路径
 set tags=tags;
 set autochdir
+"taglist自动更新
+let Tlist_Auto_Update = 1
+"let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+let Tlist_Show_One_File=1 " Only show the tag list of current file
+let Tlist_Exit_OnlyWindow = 1 "如果taglist窗口是最后一个窗口，则退出vim
 
 
 "NerdTree setting
@@ -319,20 +278,19 @@ map <silent><F2> :NERDTreeToggle <CR>
 " 在文件浏览器中定位当前文件
 map <silent><F5> :NERDTreeFind <CR>
 " 关闭文件时同时关闭文件浏览器
-let g:NERDTreeQuitOnOpen=1
-let g:NERDTreeWinSize=20
+let NERDTreeQuitOnOpen = 1
 
 "minibuffer setting
-let g:miniBufExplSplitBelow=0
-let g:miniBufExplForceSyntaxEnable=0
-let g:miniBufExplMapCTabSwitchBufs=1
-let g:miniBufExplMapWindowNavVim=1
-let g:miniBufExplMapWindowNavArrows=1
-let g:miniBufExplMaxSize=0
-let g:miniBufExplModSelTarget=1
-let g:miniBufExplTabWrap=1
-let g:miniBufExplUseSingleClick=1
-let g:miniBufExplCheckDupeBufs=0
+let g:miniBufExplSplitBelow = 0
+let g:miniBufExplForceSyntaxEnable = 0
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMaxSize = 0
+let g:miniBufExplModSelTarget = 1
+let g:miniBufExplTabWrap = 1
+let g:miniBufExplUseSingleClick = 1
+let g:miniBufExplCheckDupeBufs = 0
 
 " 打开文件定位窗口
 nnoremap <slient> <D-R> :CommandT<CR>
@@ -341,16 +299,16 @@ nnoremap <slient> <D-E> :CommandTBuffer<CR>
 
 "doxygen setting
 let g:DoxygenToolkit_authorName="招牌疯子 zp@buaa.us"
-let s:licenseTag="  \<enter>"
-let s:licenseTag=s:licenseTag . "  zimg - high performance image storage and processing system.\<enter>"
-let s:licenseTag=s:licenseTag . "      http://zimg.buaa.us \<enter>"
-let s:licenseTag=s:licenseTag . "  \<enter>"
-let s:licenseTag=s:licenseTag . "  Copyright (c) 2013-2014, Peter Zhao <zp@buaa.us>.\<enter>"
-let s:licenseTag=s:licenseTag . "  All rights reserved.\<enter>"
-let s:licenseTag=s:licenseTag . "  \<enter>"
-let s:licenseTag=s:licenseTag . "  Use and distribution licensed under the BSD license.\<enter>"
-let s:licenseTag=s:licenseTag . "  See the LICENSE file for full text.\<enter>"
-let g:DoxygenToolkit_licenseTag=s:licenseTag
+let s:licenseTag = "  \<enter>"
+let s:licenseTag = s:licenseTag . "  zimg - high performance image storage and processing system.\<enter>"
+let s:licenseTag = s:licenseTag . "      http://zimg.buaa.us \<enter>"
+let s:licenseTag = s:licenseTag . "  \<enter>"
+let s:licenseTag = s:licenseTag . "  Copyright (c) 2013-2014, Peter Zhao <zp@buaa.us>.\<enter>"
+let s:licenseTag = s:licenseTag . "  All rights reserved.\<enter>"
+let s:licenseTag = s:licenseTag . "  \<enter>"
+let s:licenseTag = s:licenseTag . "  Use and distribution licensed under the BSD license.\<enter>"
+let s:licenseTag = s:licenseTag . "  See the LICENSE file for full text.\<enter>"
+let g:DoxygenToolkit_licenseTag = s:licenseTag
 let g:DoxygenToolkit_briefTag_funcName="yes"
 let g:doxygen_enhanced_color=1
 "DoxAuthor Dox DoxBlock三个命令的快捷操作
