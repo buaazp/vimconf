@@ -4,7 +4,7 @@
 
 ### 概述
 
-我自己使用的Vim插件和配置文件，适用于C/C++开发者。
+我自己使用的Vim插件和配置文件，适用于C/C++/Go开发者。
 
 此配置在MAC OS X、Ubuntu、CentOS上都兼容，用起来很顺手。附上一张截图：
 
@@ -17,11 +17,10 @@ zp@buaa.us
 ### 使用
 
 ```
-git clone https://github.com/buaazp/vimconf
+git clone https://github.com/buaazp/vimconf --depth=1
 cd vimconf
 cp vimrc ~/.vimrc
-mkdir -p ~/.vim
-cp -r plugin ~/.vim
+cp -r vim ~/.vim
 ```
 
 #### 常用快捷键
@@ -61,12 +60,6 @@ Ctrl+t 跳回到调用出（这两个组合起来看代码简直爽）
 > 比起screen最大的优点是可以在配置文件里自定义很多功能  
 > 分屏功能简直逆天！
 
-我把自己的tmux配置文件也放在此包内，需要使用的执行以下命令即可：
-
-```
-cd vimconf
-cp tmux.conf ~/.tmux.conf
-```
 
 
 
