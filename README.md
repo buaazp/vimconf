@@ -4,7 +4,7 @@
 
 ### 概述
 
-我自己使用的Vim插件和配置文件，适用于C/C++开发者。
+我自己使用的Vim插件和配置文件，适用于C/C++/Go开发者。
 
 此配置在MAC OS X、Ubuntu、CentOS上都兼容，用起来很顺手。附上一张截图：
 
@@ -17,11 +17,14 @@ zp@buaa.us
 ### 使用
 
 ```
-git clone https://github.com/buaazp/vimconf
+git clone https://github.com/buaazp/vimconf --depth=1
 cd vimconf
 cp vimrc ~/.vimrc
-mkdir -p ~/.vim
-cp -r plugin ~/.vim
+cp -r vim ~/.vim
+
+//run VIM and install vim plugins
+vim
+Press F6
 ```
 
 #### 常用快捷键
@@ -29,20 +32,27 @@ cp -r plugin ~/.vim
 注：如果有自己的需要在配置文件中修改
 
 ```
-Tab 自动补全
-F2 打开文件浏览窗口
-Ctrl+ww 在打开多个文件之间切换，tab上按d是关闭，回车是进入
-F4 打开函数列表
-F9 切换代码/头文件
-F11 切换paste模式（粘贴从别处复制过来的代码时不会因为自动缩进而乱掉格式）
-F12 打开/关闭行号
-v 选择模式
-zf 选中一段代码后将其折叠起来
-空格 在折叠位置打开折叠段
-Ctrl+v 垂直选中
-I 垂直选中之后多行插入
-Ctrl+] 跳转到定义处
-Ctrl+t 跳回到调用出（这两个组合起来看代码简直爽）
+Tab           Insert模式下自动补全
+F2            打开文件浏览窗口
+F2+f          定位当前文件
+F3+a/f/b/l    Dox添加注释
+Ctrl+ww       在打开多个窗口之间切换，tab上按d是关闭，回车是进入
+Tab/Shift+Tab Normal模式下多buffer切换
+F4            打开函数列表
+F5            显示gitdiff
+F6            安装插件
+F9            切换代码/头文件
+F11           切换paste模式（粘贴从别处复制过来的代码时不会因为自动缩进而乱掉格式）
+F12           打开/关闭行号
+v             选择模式
+回车          选择模式下按回车之后输入一个关键字符（如=）可根据此符号自动对齐
+zf            选中一段代码后将其折叠起来
+空格          在折叠位置打开折叠段
+Ctrl+v        垂直选中
+I             垂直选中之后多行插入
+Ctrl+]        跳转到定义处
+Ctrl+t        跳回到调用出（这两个组合起来看代码简直爽）
+Ctrl+p        打开模糊搜索
 ```
 其他的快捷键基本没改，会用Vim的都没问题。
 
