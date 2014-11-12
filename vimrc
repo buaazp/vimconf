@@ -4,22 +4,23 @@
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
-Plug 'junegunn/seoul256.vim'
+" Plug 'junegunn/seoul256.vim'
+Plug 'fatih/molokai'
 Plug 'junegunn/vim-easy-align'
-" Plug 'junegunn/vim-github-dashboard'
+"Plug 'junegunn/vim-github-dashboard'
 Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'kien/ctrlp.vim'
 Plug 'techlivezheng/vim-plugin-minibufexpl'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+" Plug 'tpope/vim-fugitive'
+" Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
 Plug 'tomtom/tcomment_vim'
 Plug 'ervandew/supertab'
+" 如果你的vim版本较新切支持lua，则可以启用补全功能更加强大的neocomplete
 Plug 'Shougo/neocomplcache.vim'
 " Plug 'Shougo/neocomplete.vim'
-" Plug 'fatih/vim-go'
-" Plug 'nsf/gocode', { 'tag': 'go.weekly.2012-03-13', 'rtp': 'vim' }
+Plug 'fatih/vim-go'
 
 call plug#end()
 
@@ -27,6 +28,7 @@ call plug#end()
 " keybind setting
 """"""""""""""""""""""""""""""
 vmap <Enter> <Plug>(EasyAlign)
+nnoremap <silent><C-d> :bd<CR> :syntax on<CR>
 nnoremap <silent><Tab> :bn<CR>
 nnoremap <silent><S-Tab> :bp<CR>
 "用空格键来打开/关闭折叠
@@ -41,7 +43,7 @@ nnoremap <silent><F3>f :Dox<CR>
 nnoremap <silent><F3>b :DoxBlock<CR>
 nnoremap <silent><F3>l :DoxLic<CR>
 nnoremap <silent><F4> :TagbarToggle<CR>
-nnoremap <silent><F5> :GitGutterToggle<CR> 
+" nnoremap <silent><F5> :GitGutterToggle<CR> 
 nnoremap <silent><F6> :PlugInstall<CR> 
 "设置a.vim插件的快捷键
 nnoremap <silent><F9> :A<CR>
@@ -54,8 +56,8 @@ noremap <silent><F12> :set number!<CR>
 """"""""""""""""""""""""""""""
 set      shell=/bin/sh
 syntax   enable
+filetype plugin indent on
 syntax   on
-filetype plugin on
 set      number
 
 "搜索时及时匹配且忽略大小写
@@ -167,11 +169,14 @@ let g:airline_theme                        = "molokai" "设定主题
 " seoul256 (dark):
 "   Range:   233 (darkest) ~ 239 (lightest)
 "   Default: 237
-let g:seoul256_background                  = 233
-colorscheme seoul256
+" let g:seoul256_background                  = 233
+" let g:molokai_original                     = 1
+let g:rehash256                            = 1
+colorscheme molokai
 
 "go-vim settings
 let g:go_disable_autoinstall               = 0
+let g:go_fmt_command                       = "goimports"
 
 "neocomplete settings
 let g:neocomplete#enable_at_startup        = 1
