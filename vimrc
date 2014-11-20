@@ -5,7 +5,7 @@ call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 " Plug 'junegunn/seoul256.vim'
-Plug 'fatih/molokai'
+" Plug 'fatih/molokai'
 Plug 'junegunn/vim-easy-align'
 "Plug 'junegunn/vim-github-dashboard'
 Plug 'scrooloose/nerdtree'
@@ -17,9 +17,8 @@ Plug 'techlivezheng/vim-plugin-minibufexpl'
 Plug 'bling/vim-airline'
 Plug 'tomtom/tcomment_vim'
 Plug 'ervandew/supertab'
-" 如果你的vim版本较新切支持lua，则可以启用补全功能更加强大的neocomplete
-Plug 'Shougo/neocomplcache.vim'
-" Plug 'Shougo/neocomplete.vim'
+" Plug 'Shougo/neocomplcache.vim'
+Plug 'Shougo/neocomplete.vim'
 Plug 'fatih/vim-go'
 
 call plug#end()
@@ -84,6 +83,10 @@ set      nocompatible " Use Vim defaults (much better!)
 set      history=1500 " keep 1500 lines of command line history
 set      ruler " show the cursor position all the time
 set      laststatus=2
+
+"去掉预览窗口preview和设置longest
+set completeopt=menu,longest
+
 "命令行高度为2
 set      cmdheight=2
  
@@ -174,19 +177,27 @@ let g:airline_theme                        = "molokai" "设定主题
 let g:rehash256                            = 1
 colorscheme molokai
 
+""""""""""""""""""""""""""""""
 "go-vim settings
+""""""""""""""""""""""""""""""
 let g:go_disable_autoinstall               = 0
 let g:go_fmt_command                       = "goimports"
 
+""""""""""""""""""""""""""""""
 "neocomplete settings
+""""""""""""""""""""""""""""""
 let g:neocomplete#enable_at_startup        = 1
 
+""""""""""""""""""""""""""""""
 "NerdTree setting
+""""""""""""""""""""""""""""""
 " 关闭文件时同时关闭文件浏览器
 let g:NERDTreeQuitOnOpen                   = 1
 let g:NERDTreeWinSize                      = 20
 
+""""""""""""""""""""""""""""""
 "minibuffer setting
+""""""""""""""""""""""""""""""
 let g:miniBufExplMapWindowNavVim           = 1
 let g:miniBufExplMapWindowNavArrows        = 1
 let g:miniBufExplMapCTabSwitchBufs         = 1
