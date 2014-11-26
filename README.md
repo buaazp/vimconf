@@ -57,7 +57,7 @@ Plug 'Shougo/neocomplcache.vim'
 
 可能有些朋友发现我截图里面vim状态栏比较好看，还有箭头什么的，那是因为我使用了支持符号的修改版字体，这类字体叫powerline字体，在这儿可以找到所有的powerline字体：
 
-https://github.com/Lokaltog/powerline
+https://github.com/Lokaltog/powerline-fonts
 
 下载完之后配置iterm，默认的terminal应该也可以设置，设置方法：
 
