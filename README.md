@@ -43,6 +43,28 @@ Plug 'Shougo/neocomplcache.vim'
 " Plug 'Shougo/neocomplete.vim'
 ```
 
+#### 关于Mac下F6等快捷键不起作用
+
+这是因为Mac把这些键用于自己的某些系统功能了，需要设置一下Mac快捷键的功能：
+
+在『system preferences - keyboard』里，有一个『将F1, F2用作标准功能键』，把它勾选上。
+
+此外，在『shortcuts』那个分页下面，把『show desktop』和『show dashborad』的快捷键给取消掉，因为它们会占用F11和F12。
+
+当然了，如果你觉得Mac默认的这些快捷键有用，那么可以修改一下vimrc里相关功能的快捷键设置，弄成顺手的，我在里面都写了注释。
+
+#### iterm字体
+
+可能有些朋友发现我截图里面vim状态栏比较好看，还有箭头什么的，那是因为我使用了支持符号的修改版字体，这类字体叫powerline字体，在这儿可以找到所有的powerline字体：
+
+https://github.com/Lokaltog/powerline
+
+下载完之后配置iterm，默认的terminal应该也可以设置，设置方法：
+
+打开iterm2的设置窗口，在『profiles』下选你的配置，在右边『text』选项卡中把『常规字体』和『非ASCII字体』都设置成你下载的powerline字体即可。
+
+顺便推荐我用的这款字体『Meslo LG S for Powerline』，Meslo就是Sublime的默认字体，看着挺养眼的。
+
 #### 常用快捷键
 
 注：如果有自己的需要在配置文件中修改
