@@ -26,7 +26,7 @@ call plug#end()
 """"""""""""""""""""""""""""""
 " keybind setting
 """"""""""""""""""""""""""""""
-vmap <Enter> <Plug>(EasyAlign)
+vnoremap <Enter> <Plug>(EasyAlign)
 nnoremap <silent><C-d> :bd<CR> :syntax on<CR>
 nnoremap <silent><Tab> :bn<CR>
 nnoremap <silent><S-Tab> :bp<CR>
@@ -37,18 +37,18 @@ nnoremap <silent><space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 noremap <silent><F2> :NERDTreeToggle <CR>
 "在文件浏览器中定位当前文件
 noremap <silent><F2>f :NERDTreeFind <CR>
-nnoremap <silent><F3>a :DoxAuthor<CR>
-nnoremap <silent><F3>f :Dox<CR>
-nnoremap <silent><F3>b :DoxBlock<CR>
-nnoremap <silent><F3>l :DoxLic<CR>
-nnoremap <silent><F4> :TagbarToggle<CR>
-" nnoremap <silent><F5> :GitGutterToggle<CR> 
-nnoremap <silent><F6> :PlugInstall<CR> 
+noremap <silent><F3>a :DoxAuthor<CR>
+noremap <silent><F3>f :Dox<CR>
+noremap <silent><F3>b :DoxBlock<CR>
+noremap <silent><F3>l :DoxLic<CR>
+noremap <silent><F4> :TagbarToggle<CR>
+"nnoremap <silent><F5> :GitGutterToggle<CR> 
+noremap <silent><F6> :PlugInstall<CR> 
 "设置a.vim插件的快捷键
-nnoremap <silent><F9> :A<CR>
-set pastetoggle=<F11>
+noremap <silent><F9> :A<CR>
 "设置F12为显示行号快捷键
 noremap <silent><F12> :set number!<CR>
+set      pastetoggle=<F11>
 
 """"""""""""""""""""""""""""""
 " global settings
@@ -85,7 +85,7 @@ set      ruler " show the cursor position all the time
 set      laststatus=2
 
 "去掉预览窗口preview和设置longest
-set completeopt=menu,longest
+set      completeopt=menu,longest
 
 "命令行高度为2
 set      cmdheight=2
@@ -132,6 +132,9 @@ set      wildmenu
 "如果去掉这一行,默认值set mouse=a就生效了,这时不能用鼠标选中复制.
 set      mouse=v
 
+" ctags在当前目录找不到tags文件就向父目录找
+set      tags=tags;
+
 "打开文件时自动到达上次浏览时的位置
 set      viminfo='1000,f1,<500
 autocmd  BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
@@ -152,7 +155,7 @@ autocmd  BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm 
 " vimim setting
 """"""""""""""""""""""""""""""
 let g:vimim_enable_static_enu              = 2
-"let g:vimim_enable_sexy_input_style=2
+" let g:vimim_enable_sexy_input_style        = 2
 " 关闭中文标点
 let g:vimim_disable_chinese_punctuation    = 1
 "中英文之间不加空格
@@ -180,6 +183,10 @@ colorscheme molokai
 """"""""""""""""""""""""""""""
 "go-vim settings
 """"""""""""""""""""""""""""""
+let g:go_highlight_functions               = 1
+let g:go_highlight_methods                 = 1
+let g:go_highlight_structs                 = 1
+let g:go_fmt_fail_silently                 = 1
 let g:go_disable_autoinstall               = 0
 let g:go_fmt_command                       = "goimports"
 
