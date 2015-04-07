@@ -20,6 +20,7 @@ Plug 'ervandew/supertab'
 " Plug 'Shougo/neocomplcache.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'fatih/vim-go'
+" Plug 'wting/rust.vim'
 
 call plug#end()
 
@@ -43,6 +44,7 @@ noremap <silent><F3>b :DoxBlock<CR>
 noremap <silent><F3>l :DoxLic<CR>
 noremap <silent><F4> :TagbarToggle<CR>
 "nnoremap <silent><F5> :GitGutterToggle<CR> 
+nnoremap <silent><F5> :nohl<CR>
 noremap <silent><F6> :PlugInstall<CR> 
 "设置a.vim插件的快捷键
 noremap <silent><F9> :A<CR>
@@ -138,6 +140,8 @@ set      tags=tags;
 "打开文件时自动到达上次浏览时的位置
 set      viminfo='1000,f1,<500
 autocmd  BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+"git commit添加注释时设置最大宽度和自动换行
+autocmd  Filetype gitcommit setlocal spell textwidth=72
 
 "与系统剪贴板共享
 "set      clipboard+=unnamed
@@ -187,8 +191,9 @@ let g:go_highlight_functions               = 1
 let g:go_highlight_methods                 = 1
 let g:go_highlight_structs                 = 1
 let g:go_fmt_fail_silently                 = 1
-let g:go_disable_autoinstall               = 0
-let g:go_fmt_command                       = "goimports"
+let g:go_disable_autoinstall               = 1
+let g:go_fmt_autosave                      = 1
+" let g:go_fmt_command                       = "goimports"
 
 """"""""""""""""""""""""""""""
 "neocomplete settings
