@@ -11,6 +11,7 @@ set fish_plugins brew git
 alias gitlog "git log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset'"
 alias gits "git status"
 alias goget "gopm get -g -v"
+alias gitref "git remote update origin --prune"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-fish/plugins/*)
 # Custom plugins may be added to ~/.oh-my-fish/custom/plugins/
@@ -20,13 +21,14 @@ alias goget "gopm get -g -v"
 #set fish_custom $HOME/dotfiles/oh-my-fish
 set -x PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin
 set -x GOPATH /Users/zippo/develop/GO
+set -x GOBIN $GOPATH/bin
 set -x GOROOT /usr/local/Cellar/go/1.4.2/libexec
-set -x PATH $GOROOT/bin $GOPATH/bin $PATH
+set -x PATH $GOROOT/bin $GOBIN $PATH
 set -x GIT_EDITOR /usr/local/bin/vim
-#set -x ALL_PROXY socks5://127.0.0.1:1080
-set -x DOCKER_HOST tcp://192.168.59.103:2376
-set -x DOCKER_CERT_PATH /Users/zippo/.boot2docker/certs/boot2docker-vm
-set -x DOCKER_TLS_VERIFY 1
+# set -x ALL_PROXY socks5://127.0.0.1:1080
+# set -x DOCKER_HOST tcp://192.168.59.103:2376
+# set -x DOCKER_CERT_PATH /Users/zippo/.boot2docker/certs/boot2docker-vm
+# set -x DOCKER_TLS_VERIFY 1
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
