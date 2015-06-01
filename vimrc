@@ -168,7 +168,7 @@ let g:vimim_disable_seamless_english_input = 1
 """"""""""""""""""""""""""""""
 " airline setting
 """"""""""""""""""""""""""""""
-let g:airline_detect_whitespace            = 0 "关闭空白符检测
+let g:airline#extensions#whitespace        = 0 "关闭空白符检测
 let g:airline_powerline_fonts              = 1
 let g:airline#extensions#tabline#enabled   = 0 "顶部tab栏显示
 let g:airline_theme                        = "molokai" "设定主题
