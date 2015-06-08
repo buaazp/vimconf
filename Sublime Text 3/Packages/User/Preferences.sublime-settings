@@ -1,0 +1,14 @@
+{
+	"auto_complete_delay": 1,
+	"bold_folder_labels": true,
+	"default_line_ending": "unix",
+	"font_size": 18,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+	],
+	"show_encoding": true,
+	"vintage_start_in_command_mode": true,
+	"word_wrap": true
+}

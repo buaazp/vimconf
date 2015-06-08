@@ -9,8 +9,8 @@ set fish_path $HOME/.oh-my-fish
 
 # Custom plugins and themes may be added to ~/.oh-my-fish/custom
 # Plugins and themes can be found at https://github.com/oh-my-fish/
-Theme 'robbyrussell'
-Plugin 'theme'
+Theme "robbyrussell"
+Plugin "theme"
 Plugin "brew"
 Plugin "git-flow"
 Plugin "gi"
@@ -30,13 +30,17 @@ alias gitref "git remote update origin --prune"
 set -x PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin
 
 # for golang env
-set -x GOPATH /Users/zippo/develop/GO
+set -x GOPATH $HOME/develop/GO
 set -x GOBIN $GOPATH/bin
 set -x GOROOT /usr/local/Cellar/go/1.4.2/libexec
 set -x PATH $GOROOT/bin $GOBIN $PATH
 
 # Set git_editor as the private vim
 set -x GIT_EDITOR /usr/local/bin/vim
+
+# for protobuf env
+set -x PATH_GOGOPROTOBUF $GOPATH/src/github.com/gogo/protobuf
+set -x PATH_PROTOBUF $PATH_GOGOPROTOBUF $PATH_GOGOPROTOBUF/protobuf .
 
 # for docker env
 # set -x ALL_PROXY socks5://127.0.0.1:1080

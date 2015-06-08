@@ -1,0 +1,6 @@
+[
+	{ "keys": ["ctrl+super+t"], "command": "open_mac_terminal"},
+	{ "keys": ["g", "f"], "command": "jump_forward"},
+	{ "keys": ["g", "b"], "command": "jump_back"},
+	// { "keys": ["g","d"], "command": "godef" },
+]

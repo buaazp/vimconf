@@ -1,0 +1,13 @@
+{
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ChannelRepositoryTools",
+		"GitSavvy",
+		"GoSublime",
+		"MacTerminal",
+		"Package Control"
+	]
+}
