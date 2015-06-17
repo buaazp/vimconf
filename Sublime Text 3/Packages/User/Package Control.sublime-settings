@@ -4,10 +4,11 @@
 	],
 	"installed_packages":
 	[
-		"ChannelRepositoryTools",
 		"GitSavvy",
+		"Godef",
 		"GoSublime",
 		"MacTerminal",
+		"Material Theme",
 		"Package Control"
 	]
 }

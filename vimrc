@@ -104,6 +104,9 @@ set      backspace=indent,eol,start
 "允许光标跨行
 set      whichwrap=b,<,>,[,],h,l
 
+"高亮当前行
+set      cursorline
+
 language message en_US.UTF-8
 set      helplang=cn
 set      ambiwidth=double

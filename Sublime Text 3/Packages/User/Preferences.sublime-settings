@@ -1,14 +1,25 @@
 {
-	"auto_complete_delay": 1,
+	"theme": "Material-Theme-Darker.sublime-theme",
+	"color_scheme": "Packages/Material Theme/schemes/Material-Theme.tmTheme",
+	"always_show_minimap_viewport": true,
 	"bold_folder_labels": true,
+	"draw_minimap_border": true,
+	
+	"font_size": 16,
+	"line_padding_bottom": 3,
+	"line_padding_top": 3,
+
+	"word_wrap": true,
 	"default_line_ending": "unix",
-	"font_size": 18,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
+	"overlay_scroll_bars": "enabled",
+
+	"auto_complete_delay": 1,
+	"show_encoding": true,
+
+	"vintage_start_in_command_mode": true,
 	"ignored_packages":
 	[
 	],
-	"show_encoding": true,
-	"vintage_start_in_command_mode": true,
-	"word_wrap": true
 }
