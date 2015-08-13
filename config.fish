@@ -20,11 +20,16 @@ alias gitlog "git log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Cre
 alias gits "git status"
 alias goget "gopm get -g -v"
 alias gitref "git remote update origin --prune"
+alias htop "sudo htop"
+alias pipup "pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 # for c/c++ build env
 # set -x CXX /usr/local/bin/g++-4.9
 # set -x CC /usr/local/bin/gcc-4.9
 # set -x CPP /usr/local/bin/cpp-4.9
+
+# set -x LD_LIBRARY_PATH "$HOME/develop/python/clib"
+set -x PYTHONPATH $HOME/develop/python/mylibs:$HOME/develop/python/memory-album
 
 # Set PATH with /usr/local at first place
 set -x PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin
@@ -37,15 +42,16 @@ set -x PATH $GOROOT/bin $GOBIN $PATH
 
 # Set git_editor as the private vim
 set -x GIT_EDITOR /usr/local/bin/vim
+set -x HOMEBREW_EDITOR /usr/local/bin/vim
 
 # for protobuf env
 set -x PATH_GOGOPROTOBUF $GOPATH/src/github.com/gogo/protobuf
-set -x PATH_PROTOBUF $PATH_GOGOPROTOBUF $PATH_GOGOPROTOBUF/protobuf .
+set -x PATH_PROTOBUF $PATH_GOGOPROTOBUF:$PATH_GOGOPROTOBUF/protobuf:.
 
 # for docker env
 # set -x ALL_PROXY socks5://127.0.0.1:1080
 # set -x DOCKER_HOST tcp://192.168.59.103:2376
-# set -x DOCKER_CERT_PATH /Users/zippo/.boot2docker/certs/boot2docker-vm
+# set -x DOCKER_CERT_PATH $HOME/.boot2docker/certs/boot2docker-vm
 # set -x DOCKER_TLS_VERIFY 1
 
 # Load autojump configuration.

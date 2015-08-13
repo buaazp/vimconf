@@ -21,6 +21,7 @@ Plug 'ervandew/supertab'
 Plug 'Shougo/neocomplete.vim'
 Plug 'fatih/vim-go'
 " Plug 'wting/rust.vim'
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -70,7 +71,7 @@ set      softtabstop=4
 set      tabstop=4
 
 "将Tab替换为空格
-set      expandtab
+set      noexpandtab
 set      smarttab
 retab
  
