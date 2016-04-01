@@ -1,0 +1,4 @@
+gitignore
+.DS_Store
+*.swp
+vim/plugged

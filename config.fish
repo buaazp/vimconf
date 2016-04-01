@@ -27,18 +27,23 @@ alias tailttuploader "multitail -s 2 -l \"ssh tt16 'tail -f /opt/tiger/mimg/logs
 # set -x CPP /usr/local/bin/cpp-4.9
 
 # set -x LD_LIBRARY_PATH "$HOME/develop/python/clib"
-set -x PYTHONPATH $HOME/develop/python/mylibs:$HOME/develop/python/mosaic-dashboard:$HOME/develop/python
+set -x PYTHONPATH $HOME/develop/python/mylibs:$HOME/develop/python/mosaic-dashboard:$HOME/develop/python:/Users/zippo/develop/toutiao
 
+set -x LDFLAGS -L/usr/local/opt/openssl/lib
+set -x CPPFLAGS -I/usr/local/opt/openssl/include
 set -x OPENSSL_ROOT_DIR "/usr/local/opt/openssl"
 
 # Set PATH with /usr/local at first place
-set -x PATH $HOME/bin /usr/local/bin /usr/bin /bin /usr/sbin /sbin
+set -x PATH $HOME/bin $HOME/.cargo/bin /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin
 
 # for golang env
 set -x GOPATH $HOME/develop/GO
 set -x GOBIN $GOPATH/bin
-set -x GOROOT /usr/local/Cellar/go/1.5.3/libexec
+set -x GOROOT /usr/local/opt/go/libexec
 set -x PATH $GOROOT/bin $GOBIN $PATH
+
+# for rust env
+set -x RUST_SRC_PATH $HOME/develop/rust/rust-lang/src
 
 # Set git_editor as the private vim
 set -x GIT_EDITOR /usr/local/bin/vim

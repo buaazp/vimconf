@@ -14,7 +14,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'techlivezheng/vim-plugin-minibufexpl'
 " Plug 'tpope/vim-fugitive'
 " Plug 'airblade/vim-gitgutter'
-Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tomtom/tcomment_vim'
 Plug 'ervandew/supertab'
 " Plug 'Shougo/neocomplcache.vim'
@@ -129,7 +129,7 @@ set      autoindent
 "不使用 selectmode。
 set      selectmode=
  
-"使用“Shift + 方向键”选择文本
+"使用 shift+方向键 选择文本
 set      keymodel=startsel,stopsel
  
 "在命令模式下使用 Tab 自动补全的时候，将补全内容使用一个漂亮的单行菜单形式显示出来。
@@ -208,6 +208,7 @@ let g:jedi#goto_definitions_command = ""
 let g:jedi#documentation_command = "K"
 let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<C-Space>"
+let g:jedi#popup_select_first = 0
 let g:jedi#rename_command = "<leader>r"
 
 """"""""""""""""""""""""""""""
