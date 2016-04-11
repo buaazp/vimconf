@@ -28,7 +28,8 @@ call plug#end()
 """"""""""""""""""""""""""""""
 " keybind setting
 """"""""""""""""""""""""""""""
-vnoremap <Enter> <Plug>(EasyAlign)
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap <Enter> <Plug>(EasyAlign)
 nnoremap <silent><C-d> :bd<CR> :syntax on<CR>
 nnoremap <silent><Tab> :bn<CR>
 nnoremap <silent><S-Tab> :bp<CR>
